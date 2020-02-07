@@ -1,0 +1,32 @@
+schema {
+    query: Query
+}
+
+type Query {
+    "本の一覧を取得する [出版書誌データベース](https://www.books.or.jp/)"
+    books: [Book]
+    "ID で本を取得する"
+    bookById(id: ID): Book
+}
+
+"本"
+type Book {
+    "ID"
+    id: ID
+    "本のタイトル"
+    name: String
+    "ページ数"
+    pageCount: Int
+    "著者"
+    author: Author
+}
+
+"著者"
+type Author {
+    "ID"
+    id: ID
+    "名前"
+    firstName: String
+    "名字"
+    lastName: String
+}
